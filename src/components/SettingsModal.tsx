@@ -43,8 +43,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           </button>
         </div>
 
-        {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-6">
+        {/* Scrollable Content - Hidden scrollbar but scrolling enabled */}
+        <div className="flex-1 overflow-y-auto p-6 scrollbar-hide">
           <div className="space-y-6">
             <DataManager
               links={links}

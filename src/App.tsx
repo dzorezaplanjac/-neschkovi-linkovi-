@@ -321,11 +321,18 @@ function App() {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
+        {/* Header with Logo */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            МОЈЕ <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">ЛИНК-ДРВО</span>
-          </h1>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img 
+              src="/schebet-amblem+++.png" 
+              alt="Šebet Logo" 
+              className="w-16 h-16 md:w-20 md:h-20 object-contain"
+            />
+            <h1 className="text-4xl md:text-6xl font-bold text-white">
+              МОЈЕ <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">ЛИНК-ДРВО</span>
+            </h1>
+          </div>
           <p className="text-blue-200 text-lg md:text-xl max-w-2xl mx-auto">
             Организујте своје линкове лепо са функционалношћу превлачења и угнежђеним групама
           </p>
