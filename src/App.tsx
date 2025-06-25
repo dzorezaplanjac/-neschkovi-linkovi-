@@ -11,7 +11,6 @@ import { QRCodeModal } from './components/QRCodeModal';
 import { PWAInstallPrompt } from './components/PWAInstallPrompt';
 import { SettingsModal } from './components/SettingsModal';
 import { OfflineIndicator } from './components/OfflineIndicator';
-import { NotificationManager } from './components/NotificationManager';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useServiceWorker } from './hooks/useServiceWorker';
 import { extractUrlFromText, isValidUrl, formatUrl } from './utils/linkUtils';
@@ -312,7 +311,6 @@ function App() {
 
       {/* Top Controls - Fixed Position */}
       <div className="fixed top-4 right-4 z-40 flex items-center gap-2">
-        <NotificationManager />
         <button
           onClick={() => setIsSettingsModalOpen(true)}
           className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 rounded-full transition-all hover:scale-105"
@@ -340,28 +338,28 @@ function App() {
           )}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center mb-8">
+        {/* Action Buttons - Fixed height and width for mobile consistency */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 max-w-md mx-auto sm:max-w-none">
           <button
             onClick={() => openLinkModal()}
-            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400/20"
+            className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-4 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400/20 min-h-[56px] flex-1 sm:flex-none sm:min-w-[160px]"
           >
             <Plus className="w-5 h-5" />
-            Додај линк
+            <span className="text-sm sm:text-base">Додај линк</span>
           </button>
           <button
             onClick={() => setIsQRScannerOpen(true)}
-            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-3 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400/20"
+            className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-4 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400/20 min-h-[56px] flex-1 sm:flex-none sm:min-w-[160px]"
           >
             <QrCode className="w-5 h-5" />
-            Скенирај QR
+            <span className="text-sm sm:text-base">Скенирај QR</span>
           </button>
           <button
             onClick={() => openGroupModal()}
-            className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium px-6 py-3 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400/20"
+            className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-medium px-6 py-4 rounded-lg transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400/20 min-h-[56px] flex-1 sm:flex-none sm:min-w-[160px]"
           >
             <FolderPlus className="w-5 h-5" />
-            Направи групу
+            <span className="text-sm sm:text-base">Направи групу</span>
           </button>
         </div>
 
